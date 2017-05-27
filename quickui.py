@@ -77,6 +77,23 @@ class slider(InputWidget):
     widget.config(**QUICK_UI_METADATA)
     state.put_silent(my_name, self.start)
 
+class entry(InputWidget):
+  def __init__(self, type, default = None):
+    self.type = type
+    if default is None:
+      self.value = type()
+    else:
+      self.value = default
+  def do_your_thing(self, root, my_name, state):
+    def command(*_):
+      state.put(my_name, self.type(widget.get()))
+    widget = tk.Entry(root)
+    widget.insert(0, str(self.value))
+    widget.bind('<Return>', command)
+    widget.pack(fill=tk.X, expand=1)
+    widget.config(**QUICK_UI_METADATA)
+    state.put_silent(my_name, self.value)
+
 class label(OutputWidget):
   def init_ui(self, root):
     self.text = tk.StringVar()

@@ -88,6 +88,7 @@ not only the variable silently, but to allow `OutputWidget`s to react to that st
 #### Subclasses
 
 - `slider(start, end, steps = None)`
+- `entry(type, default = None)`
 
 ### OutputWidget
 
