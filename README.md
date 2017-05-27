@@ -20,10 +20,10 @@ and is highly extendable.
 ### Code
 
 ```python
->>>> import numpy as np
-from quickui import *
-forall(a = slider(1,10,0.1), b = slider(1,10,0.1)).show(
-    plot(lambda a,b: [np.arange(1,10), np.sin(np.arange(1,10)**a) + b/a]))
+>>> import numpy as np
+>>> from quickui import *
+>>> forall(a = slider(1,10,0.1), b = slider(1,10,0.1)).show(
+...    plot(lambda a,b: [np.arange(1,10), np.sin(np.arange(1,10)**a) + b/a]))
 ```
 
 ### Output
